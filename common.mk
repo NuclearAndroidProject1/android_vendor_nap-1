@@ -47,7 +47,7 @@ PRODUCT_PACKAGES += \
 
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/aosparadox/overlay/common
+    vendor/NuclearAndroidProject/overlay/common
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -55,28 +55,28 @@ PRODUCT_COPY_FILES += \
 
 # Media effects
 PRODUCT_COPY_FILES +=  \
-    vendor/aosparadox/prebuilt/common/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
-    vendor/aosparadox/prebuilt/common/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
+    vendor/NuclearAndroidProject/prebuilt/common/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
+    vendor/NuclearAndroidProject/prebuilt/common/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
 
 # APN list
 PRODUCT_COPY_FILES += \
-    vendor/aosparadox/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+    vendor/NuclearAndroidProject/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
  
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/aosparadox/prebuilt/common/addon.d/99-backup.sh:system/addon.d/99-backup.sh \
-    vendor/aosparadox/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/aosparadox/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/aosparadox/prebuilt/common/etc/backup.conf:system/etc/backup.conf
+    vendor/NuclearAndroidProject/prebuilt/common/addon.d/99-backup.sh:system/addon.d/99-backup.sh \
+    vendor/NuclearAndroidProject/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/NuclearAndroidProject/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/NuclearAndroidProject/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
 # Boot Animantion
 ifneq ($(filter falcon titan,$(TARGET_DEVICE)),)
 PRODUCT_COPY_FILES += \
-    vendor/aosparadox/bootanimation/AOSParadox_720_bootanimation.zip:system/media/bootanimation.zip
+    vendor/NuclearAndroidProject/bootanimation/AOSParadox_720_bootanimation.zip:system/media/bootanimation.zip
 endif
 ifneq ($(filter bacon lux,$(PRODUCT_DEVICE)),)
 PRODUCT_COPY_FILES += \
-    vendor/aosparadox/bootanimation/AOSParadox_1080_bootanimation.zip:system/media/bootanimation.zip
+    vendor/NuclearAndroidProject/bootanimation/AOSParadox_1080_bootanimation.zip:system/media/bootanimation.zip
 endif
 
 # AOSParadox Version
