@@ -72,11 +72,11 @@ PRODUCT_COPY_FILES += \
 # Boot Animantion
 ifneq ($(filter falcon titan,$(TARGET_DEVICE)),)
 PRODUCT_COPY_FILES += \
-    vendor/NuclearAndroidProject/bootanimation/AOSParadox_720_bootanimation.zip:system/media/bootanimation.zip
+    vendor/NuclearAndroidProject/bootanimation/720.zip:system/media/bootanimation.zip
 endif
 ifneq ($(filter bacon lux,$(PRODUCT_DEVICE)),)
 PRODUCT_COPY_FILES += \
-    vendor/NuclearAndroidProject/bootanimation/AOSParadox_1080_bootanimation.zip:system/media/bootanimation.zip
+    vendor/NuclearAndroidProject/bootanimation/1080.zip:system/media/bootanimation.zip
 endif
 
 # AOSParadox Version
