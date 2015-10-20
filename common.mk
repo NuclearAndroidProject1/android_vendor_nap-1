@@ -79,6 +79,10 @@ PRODUCT_COPY_FILES += \
     vendor/NuclearAndroidProject/bootanimation/1080.zip:system/media/bootanimation.zip
 endif
 
-# AOSParadox Version
-PAR_VERSION := $(TARGET_DEVICE)-$(shell date -u +%Y%m%d)
-PRODUCT_PROPERTY_OVERRIDES += ro.par.version =$(PAR_VERSION)
+# NuclearAosp Version
+PRODUCT_NAME = NuclearAndroidProject
+PRODUCT_VERSION = 6.0
+PRODUCT_VERSION_MAINTENANCE = 1.0
+NUCLEAR_POSTFIX := $(shell date +"%Y%m%d-%H%M")
+NUCLEAR_VERSION := $(PRODUCT_NAME)-V$(PRODUCT_VERSION_MAINTENANCE)-$(PRODUCT_VERSION)-$(NUCLEAR_POSTFIX)
+PRODUCT_PROPERTY_OVERRIDES += ro.par.version =$(NUCLEAR_VERSION)
