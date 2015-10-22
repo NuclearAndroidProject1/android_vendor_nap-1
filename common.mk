@@ -70,14 +70,17 @@ PRODUCT_COPY_FILES += \
     vendor/NuclearAndroidProject/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
 # Boot Animantion
-ifneq ($(filter falcon titan,$(TARGET_DEVICE)),)
-PRODUCT_COPY_FILES += \
-    vendor/NuclearAndroidProject/bootanimation/720.zip:system/media/bootanimation.zip
-endif
-ifneq ($(filter bacon lux,$(PRODUCT_DEVICE)),)
+#ifneq ($(filter falcon titan,$(TARGET_DEVICE)),)
+#PRODUCT_COPY_FILES += \
+#    vendor/NuclearAndroidProject/bootanimation/720.zip:system/media/bootanimation.zip
+#endif
+#ifneq ($(filter bacon lux,$(PRODUCT_DEVICE)),)
+#PRODUCT_COPY_FILES += \
+#    vendor/NuclearAndroidProject/bootanimation/1080.zip:system/media/bootanimation.zip
+#endif
 PRODUCT_COPY_FILES += \
     vendor/NuclearAndroidProject/bootanimation/1080.zip:system/media/bootanimation.zip
-endif
+
 
 # NuclearAosp Version
 PRODUCT_NAME = NuclearAndroidProject
