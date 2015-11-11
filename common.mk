@@ -49,6 +49,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/NuclearAndroidProject/overlay/common
 
+# Copy Supersu
+PRODUCT_COPY_FILES += \
+    vendor/NuclearAndroidProject/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/NuclearAndroidProject/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
