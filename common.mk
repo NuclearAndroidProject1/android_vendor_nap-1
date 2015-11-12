@@ -42,7 +42,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Packages
 PRODUCT_PACKAGES += \
-    Launcher2 \
+    Launcher3 \
+    CMFileManager \
+    Messaging \
     libemoji
 
 # Common overlay
@@ -50,8 +52,8 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/NuclearAndroidProject/overlay/common
 
 # Layers Theme
-#PRODUCT_COPY_FILES += \
-#    vendor/NuclearAndroidProject/prebuilt/common/apk/layers.apk:system/app/Layers/Layers.apk
+PRODUCT_COPY_FILES += \
+    vendor/NuclearAndroidProject/prebuilt/common/apk/layers.apk:system/app/Layers/Layers.apk
 
 # Copy Supersu
 PRODUCT_COPY_FILES += \
