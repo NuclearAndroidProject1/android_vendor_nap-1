@@ -42,16 +42,44 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Packages
 PRODUCT_PACKAGES += \
-    Launcher2 \
+    CMFileManager \
+    Messaging \
     libemoji
 
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/NuclearAndroidProject/overlay/common
 
+# Libs
+PRODUCT_COPY_FILES += \
+    vendor/NuclearAndroidProject/prebuilt/common/lib/libnfc-nci.so:system/lib/libnfc-nci.so
+    vendor/NuclearAndroidProject/prebuilt/common/lib/libnfc_nci_jni.so:system/lib/libnfc_nci_jni.so
+    vendor/NuclearAndroidProject/prebuilt/common/lib/libnfc_ndef.so:system/lib/libnfc_ndef.so
+    vendor/NuclearAndroidProject/prebuilt/common/lib/nfc_nci.pn54x.default.so:system/lib/hw/nfc_nci.pn54x.default.so
+
+# NuclearWallpapers
+PRODUCT_COPY_FILES += \
+    vendor/NuclearAndroidProject/prebuilt/common/apk/NuclearWallpapers.apk:system/app/NuclearWallpapers/NuclearWallpapers.apk
+
+# LayersShowcase
+PRODUCT_COPY_FILES += \
+    vendor/NuclearAndroidProject/prebuilt/common/apk/LayersShowcase.apk:system/app/LayersShowcase/LayersShowcase.apk
+
+# OTA
+PRODUCT_COPY_FILES += \
+    vendor/NuclearAndroidProject/prebuilt/common/apk/ota.apk:system/app/OTA/ota.apk
+
+# Nova
+PRODUCT_COPY_FILES += \
+    vendor/NuclearAndroidProject/prebuilt/common/apk/Nova.apk:system/priv-app/Nova/Nova.apk
+
+# LayersBackup
+PRODUCT_COPY_FILES += \
+    vendor/NuclearAndroidProject/prebuilt/common/apk/LayersBackup.apk:system/app/LayersBackup/LayersBackup.apk
+
 # Layers Theme
-#PRODUCT_COPY_FILES += \
-#    vendor/NuclearAndroidProject/prebuilt/common/apk/layers.apk:system/app/Layers/Layers.apk
+PRODUCT_COPY_FILES += \
+    vendor/NuclearAndroidProject/prebuilt/common/apk/layers.apk:system/app/Layers/Layers.apk
 
 # Copy Supersu
 PRODUCT_COPY_FILES += \
@@ -98,3 +126,6 @@ PRODUCT_VERSION_MAINTENANCE = 1.0
 NUCLEAR_POSTFIX := $(shell date +"%Y%m%d-%H%M")
 NUCLEAR_VERSION := $(PRODUCT_NAME)-V$(PRODUCT_VERSION_MAINTENANCE)-$(PRODUCT_VERSION)-$(NUCLEAR_POSTFIX)
 PRODUCT_PROPERTY_OVERRIDES += ro.par.version =$(NUCLEAR_VERSION)
+
+FINISHER_SCRIPT := vendor/NuclearAndroidProject/tools/finisher
+SQUISHER_SCRIPT := vendor/NuclearAndroidProject/tools/squisher
