@@ -1,6 +1,4 @@
 #
-# This policy configuration will be used by all products that
+# This policy configuration will be used by all products
 #
-
-BOARD_SEPOLICY_DIRS += \
-    vendor/NuclearAndroidProject/sepolicy
+# Place holder
