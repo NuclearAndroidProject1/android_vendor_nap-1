@@ -44,6 +44,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     CMFileManager \
     Messaging \
+    Launcher3 \
     libemoji
 
 # Common overlay
@@ -115,6 +116,7 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES += \
 #    vendor/NuclearAndroidProject/bootanimation/1080.zip:system/media/bootanimation.zip
 #endif
+
 PRODUCT_COPY_FILES += \
     vendor/NuclearAndroidProject/bootanimation/1080.zip:system/media/bootanimation.zip
 
