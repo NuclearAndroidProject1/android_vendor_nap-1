@@ -1,4 +1,6 @@
 #
 # This policy configuration will be used by all products
 #
-# Place holder
+
+BOARD_SEPOLICY_DIRS += \
+    vendor/aosparadox/sepolicy
