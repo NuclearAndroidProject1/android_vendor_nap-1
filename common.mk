@@ -42,10 +42,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Packages
 PRODUCT_PACKAGES += \
-    CMFileManager \
-    Messaging \
+    AudioFX \
+    android-visualizer \
+    Apollo \
+    Browser \
+    DaylightHeaderHDPoly \
     Launcher3 \
-    libemoji
+    SnapdragonCamera \
+    PrebuiltBugle \
+    LockClock \
+    libemoji \
+    ntfsfix \
+    ntfs-3g
+
+# Include librsjni explicitly to workaround GMS issue
+PRODUCT_PACKAGES += \
+    librsjni
 
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += \
@@ -106,6 +118,20 @@ PRODUCT_COPY_FILES += \
     vendor/NuclearAndroidProject/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/NuclearAndroidProject/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/NuclearAndroidProject/prebuilt/common/etc/backup.conf:system/etc/backup.conf
+
+# init.d support
+PRODUCT_COPY_FILES += \
+    vendor/aosparadox/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/aosparadox/prebuilt/common/etc/init.d/00banner:system/etc/init.d/90userinit \
+    vendor/aosparadox/prebuilt/common/bin/sysinit:system/bin/sysinit
+
+# Init script file with custom extras
+PRODUCT_COPY_FILES += \
+    vendor/aosparadox/prebuilt/common/etc/init.local.rc:root/init.custom.rc
+
+# changelog copy
+PRODUCT_COPY_FILES += \
+    Changelog.txt:system/etc/changelog.txt
 
 # Boot Animantion
 #ifneq ($(filter falcon titan,$(TARGET_DEVICE)),)
