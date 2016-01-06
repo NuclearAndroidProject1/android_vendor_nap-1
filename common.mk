@@ -48,6 +48,7 @@ PRODUCT_PACKAGES += \
     Browser \
     DaylightHeaderHDPoly \
     Launcher3 \
+    OpenDelta \
     SnapdragonCamera \
     PrebuiltBugle \
     LockClock \
@@ -63,37 +64,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/NuclearAndroidProject/overlay/common
 
-# Libs
 PRODUCT_COPY_FILES += \
-    vendor/NuclearAndroidProject/prebuilt/common/lib/libnfc-nci.so:system/lib/libnfc-nci.so
-    vendor/NuclearAndroidProject/prebuilt/common/lib/libnfc_nci_jni.so:system/lib/libnfc_nci_jni.so
-    vendor/NuclearAndroidProject/prebuilt/common/lib/libnfc_ndef.so:system/lib/libnfc_ndef.so
-    vendor/NuclearAndroidProject/prebuilt/common/lib/nfc_nci.pn54x.default.so:system/lib/hw/nfc_nci.pn54x.default.so
-
-# NuclearWallpapers
-PRODUCT_COPY_FILES += \
-    vendor/NuclearAndroidProject/prebuilt/common/apk/NuclearWallpapers.apk:system/app/NuclearWallpapers/NuclearWallpapers.apk
-
-# LayersShowcase
-PRODUCT_COPY_FILES += \
-    vendor/NuclearAndroidProject/prebuilt/common/apk/LayersShowcase.apk:system/app/LayersShowcase/LayersShowcase.apk
-
-# OTA
-PRODUCT_COPY_FILES += \
-    vendor/NuclearAndroidProject/prebuilt/common/apk/ota.apk:system/app/OTA/ota.apk
-
-# Nova
-PRODUCT_COPY_FILES += \
-    vendor/NuclearAndroidProject/prebuilt/common/apk/Nova.apk:system/priv-app/Nova/Nova.apk
-
-# LayersBackup
-PRODUCT_COPY_FILES += \
-    vendor/NuclearAndroidProject/prebuilt/common/apk/LayersBackup.apk:system/app/LayersBackup/LayersBackup.apk
-
-# Layers Theme
-PRODUCT_COPY_FILES += \
-    vendor/NuclearAndroidProject/prebuilt/common/apk/layers.apk:system/app/Layers/Layers.apk
-
+	vendor/NuclearAndroidProject/prebuilt/NuclearWallpaper.apk:system/app/NuclearWallpaper.apk \
+	vendor/NuclearAndroidProject/prebuilt/Layers_backup.apk:system/app/Layers_backup.apk
+	
 # Copy Supersu
 PRODUCT_COPY_FILES += \
     vendor/NuclearAndroidProject/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
@@ -121,39 +95,27 @@ PRODUCT_COPY_FILES += \
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/aosparadox/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/aosparadox/prebuilt/common/etc/init.d/00banner:system/etc/init.d/90userinit \
-    vendor/aosparadox/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/NuclearAndroidProject/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/NuclearAndroidProject/prebuilt/common/etc/init.d/00banner:system/etc/init.d/90userinit \
+    vendor/NuclearAndroidProject/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Init script file with custom extras
 PRODUCT_COPY_FILES += \
-    vendor/aosparadox/prebuilt/common/etc/init.local.rc:root/init.custom.rc
+    vendor/NuclearAndroidProject/prebuilt/common/etc/init.local.rc:root/init.custom.rc
 
 # changelog copy
 PRODUCT_COPY_FILES += \
     Changelog.txt:system/etc/changelog.txt
 
-# Boot Animantion
-#ifneq ($(filter falcon titan,$(TARGET_DEVICE)),)
-#PRODUCT_COPY_FILES += \
-#    vendor/NuclearAndroidProject/bootanimation/720.zip:system/media/bootanimation.zip
-#endif
-#ifneq ($(filter bacon lux,$(PRODUCT_DEVICE)),)
-#PRODUCT_COPY_FILES += \
-#    vendor/NuclearAndroidProject/bootanimation/1080.zip:system/media/bootanimation.zip
-#endif
-
 PRODUCT_COPY_FILES += \
     vendor/NuclearAndroidProject/bootanimation/1080.zip:system/media/bootanimation.zip
-
 
 # NuclearAosp Version
 PRODUCT_NAME = NuclearAndroidProject
 PRODUCT_VERSION = 6.0
-PRODUCT_VERSION_MAINTENANCE = 1.1
+PRODUCT_VERSION_MAINTENANCE = 2.0
 NUCLEAR_POSTFIX := $(shell date +"%Y%m%d-%H%M")
 NUCLEAR_VERSION := $(PRODUCT_NAME)-V$(PRODUCT_VERSION_MAINTENANCE)-$(PRODUCT_VERSION)-$(NUCLEAR_POSTFIX)
 PRODUCT_PROPERTY_OVERRIDES += ro.par.version =$(NUCLEAR_VERSION)
-
 FINISHER_SCRIPT := vendor/NuclearAndroidProject/tools/finisher
 SQUISHER_SCRIPT := vendor/NuclearAndroidProject/tools/squisher

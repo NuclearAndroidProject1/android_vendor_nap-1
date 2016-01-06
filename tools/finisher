@@ -23,7 +23,7 @@ fi
 
 # Determine what to name the new signed package
 MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $OUT/system/build.prop`
-OUTFILE=$OUT/$MODVERSION.zip
+OUTFILE=$OUT/$NUCLEAR_VERSION
 
 # Create a md5 checksum image of the repacked package
 (

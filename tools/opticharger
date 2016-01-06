@@ -131,4 +131,3 @@ then
 else
     echo "Usage: $0 [apk file]"
 fi
-
