@@ -1,16 +1,5 @@
-# Copyright (C) 2015 The AOSParadox Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# Inherit build optimizations
+include vendor/NuclearAndroidProject/config/nuclearoptimizations/nuclearoptimizations.mk
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -42,13 +31,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Packages
 PRODUCT_PACKAGES += \
-    AudioFX \
     android-visualizer \
-    Apollo \
     Browser \
     DaylightHeaderHDPoly \
-    Launcher3 \
-    OpenDelta \
     SnapdragonCamera \
     PrebuiltBugle \
     LockClock \
@@ -60,14 +45,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librsjni
 
+# NRR Makefile
+include vendor/NuclearAndroidProject/config/nuclearoptimizations/nap.mk
+
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/NuclearAndroidProject/overlay/common
 
 PRODUCT_COPY_FILES += \
 	vendor/NuclearAndroidProject/prebuilt/NuclearWallpaper.apk:system/app/NuclearWallpaper.apk \
-	vendor/NuclearAndroidProject/prebuilt/Layers_backup.apk:system/app/Layers_backup.apk
-	
+	vendor/NuclearAndroidProject/prebuilt/common/apk/LayersShowcase.apk:system/app/LayersShowcase/LayersShowcase.apk \
+	vendor/NuclearAndroidProject/prebuilt/common/apk/Nova.apk:system/priv-app/Nova/Nova.apk \
+    vendor/NuclearAndroidProject/prebuilt/common/apk/layers.apk:system/app/Layers/Layers.apk
+	 
 # Copy Supersu
 PRODUCT_COPY_FILES += \
     vendor/NuclearAndroidProject/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
@@ -89,8 +79,10 @@ PRODUCT_COPY_FILES += \
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/NuclearAndroidProject/prebuilt/common/addon.d/99-backup.sh:system/addon.d/99-backup.sh \
-    vendor/NuclearAndroidProject/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/NuclearAndroidProject/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/NuclearAndroidProject/prebuilt/common/addon.d/71-layers.sh:system/addon.d/71-layers.sh \
+    vendor/NuclearAndroidProject/prebuilt/common/addon.d/50-nuclear.sh:system/addon.d/50-nuclear.sh \
+    vendor/NuclearAndroidProject/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/NuclearAndroidProject/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/NuclearAndroidProject/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
 # init.d support

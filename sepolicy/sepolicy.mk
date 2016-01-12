@@ -4,4 +4,4 @@
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/NuclearAndroidProject/sepolicy
+    vendor/aosparadox/sepolicy
